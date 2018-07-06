@@ -1,48 +1,46 @@
 html {
 font-size: 18px;
-line-height: 1.4;
 font-family: "Helvetica" sans-serif;
+background-color: white;
+}
+
+body {
+line-height: 1.4;
 }
 
 .container {
   max-width: 960px;
   margin: 0 auto;
 }
-h1 {
-  font-weight: bold;
-  font-size: 2rem;
-  line-height: 1.2;
-}
 
-body {
-  flex;
-  flex-direction: column;
-  align-items: center;
+.flex {
+  display: flex;
 }
 
 /*nav*/
 
 header {
-  display: flex;
-  position: absolute;
-  background-color: cadetblue;
-  width: 960px;
-
+height: 30rem;
+padding-top: 1rem;
+background-image: url("https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/tortoiseshell-optics/resources/images/glasses-bg.png");
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
 }
 
 nav {
-  color: white;
-  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  background-color: cadetblue;
   padding: 1rem 0;
-
-
+  justify-content: space-between;
+  color: white;
 }
 
-nav li {
-  display: inline-block;
-  padding: 0 1rem;
+nav div {
+  display: flex;
+  align-items: center;
 }
-
 
 nav img {
   height: 1.5rem;
@@ -50,88 +48,180 @@ nav img {
   padding-right: 1rem;
 }
 
+nav ul {
+  margin-right: 1rem;
+}
+
+nav li {
+  display: inline;
+  padding: 0 1rem;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+
+
+
 /*banner*/
 
-.banner {
-  background: url(https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/tortoiseshell-optics/resources/images/glasses-bg.png);
-  height: 30rem;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  display: flex;
+header .flex {
   justify-content: flex-end;
 }
 
-.message {
+.banner {
+  display: inline-block;
   background-color: white;
-  color: black;
   text-transform: uppercase;
   position: relative;
   padding: 1.5rem 5rem;
-  top: 10rem;
-  width: 45%;
+  margin-top: 10rem;
+}
 
+
+h1 {
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+@media only screen and (max-width: 768px) {
+  header {
+    height: 22rem;
+    padding-top: 0;
+  }
+
+nav.container {
+  max-width: 100%;
+}
+
+.banner h1 {
+  font-size: 1.33rem;
+  text-align: center;
+}
+
+.banner {
+  margin-top: 5rem;
+  margin-right: 2rem;
+  padding: 0.75rem 4rem;
+}
+}
+
+@media only screen and (max-width:560px) {
+  .menu ul {
+  display: none;
+  }
+.menu ul.mobile-menu  {
+  display: block;
+}
+
+header {
+  background-position: 20%;
+  height: 17rem;
+}
+
+header div span {
+  display: none;
+}
+.banner {
+  margin: 9rem auto 0 auto;
+  padding: 1rem 0rem;
+  width: 100%;
+}
+
+.banner h1 {
+  font-size: 1rem;
+}
 }
 
 /*Services*/
 
-.Services {
+.supporting {
   display: flex;
-  justify-content: space-around;
-  max-height: 8rem;
-  padding: 3rem 6rem;
+  justify-content: center;
 }
 
 .Service {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  width: 5rem;
+  height: 8rem;
+  margin: 3rem;
   text-align: center;
-
-
 }
 
-.service img {
-  max-width: 5rem;
-  min-width: 3.5rem;
+.supporting img {
+width: 5rem;
+margin-bottom: 1rem;
 }
 
-.service span {
-  text-align: center;
-  line-height: 1.5;
+img.Paper-Icon {
+  width: 3.5rem;
+}
+
+@media only screen and (max-width:560px) {
+.supporting {
+flex-direction: column;
+align-items: center;
+margin-top: 3.77rem;
+  }
+
+.Service {
+font-size: 0.77rem;
+margin: 0.77rem;
+}
 }
 
 /*Information*/
 
-.information {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
 
 .info {
-  display: block;
+  width: 35%;
+  margin-right: 5%;
+  margin-bottom: 4rem;
+}
+
+.info p {
+  padding: 1rem 0;
 }
 
 .title {
-  font-weight: bold;
-  background-color: cadetblue;
-  color: white;
-  font-size: 1rem;
+  max-width: 10rem;
   padding: 0.5rem 1.25rem;
-  width: 20%;
+  background-color: cadetblue;
+  font-weight: bold;
+  color: white;
+
 }
 
-p {
-  width: 35%;
-  padding: 1rem 0 1rem 0;
+@media only screen and (max-width:560px) {
+.info {
+  width: 100%;
 }
+
+.info .title {
+  width: 100%;
+  max-width: none;
+  margin-right: 0;
+  text-align: center;
+}
+
+.info p {
+  font-size: 0.77rem;
+  padding: 1rem 1rem 4rem 1rem;
+}
+
+}
+
+
 /*footer*/
 
 footer {
   display: flex;
   align-items: center;
-  max-width: 960px;
   margin: 0 auto;
   background-color: azure;
   color: black;
@@ -140,4 +230,13 @@ footer {
 footer img {
   padding: 4rem 1rem 4rem 4rem;
   height: 1.5rem;
+}
+
+@media only screen and (max-width:560px) {
+  footer {
+    justify-content: center;
+  }
+  footer span {
+    display: none;
+  }
 }
